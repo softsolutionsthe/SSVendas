@@ -1,5 +1,21 @@
 ECHO OFF
 
+xcopy  /E /C %tmp%"\SoftSolutions\downloads\SSVendas\trunk"
+
+del /s /q "conexao.udl"
+del /s /q "certificado.pfx"
+del /s /q "configs.ini"
+
+xcopy %tmp%"\SoftSolutions\bk\conexao.udl"
+xcopy %tmp%"\SoftSolutions\bk\configs.ini"
+xcopy %tmp%"\SoftSolutions\bk\certificado.pfx" "Certificados"
+
+del update.bat
+xcopy %tmp%\SoftSolutions\downloads\SSVendas\trunk\update.bat
+
+unzip SSVendas.zip
+start SSVendas.exe
+
 if EXIST %windir%\SysWOW64 goto Win64
 
 :Win32
@@ -23,10 +39,5 @@ regsvr32 %windir%\SysWOW64\msxml5.dll /s
 goto end
 
 :end
-
-del update.bat
-xcopy %tmp%\SoftSolutions\downloads\SSVendas\trunk\update.bat
-
-unzip SSvendas.zip
 
 exit;
