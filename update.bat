@@ -10,9 +10,9 @@ xcopy conexao.udl %tmp%"\SoftSolutions\bk\"
 xcopy configs.ini %tmp%"\SoftSolutions\bk\"
 xcopy "Certificados\certificado.pfx" %tmp%"\SoftSolutions\bk\"
 
-mkdir  %tmp%"\SoftSolutions\downloads"
+mkdir  %tmp%"\SoftSolutions\downloads\SSVendas"
 echo "Aguardando baixar os arquivos."
-TortoiseProc.exe /notempfile /command:checkout /path:%tmp%\SoftSolutions\downloads
+TortoiseProc.exe /notempfile /command:update /path:%tmp%\SoftSolutions\downloads\SSVendas
 
 del /s /q ""
 rd /s /q "Certificados"
@@ -22,7 +22,7 @@ rd /s /q "Schemas"
 rd /s /q "XMLs"
 rd /s /q "MinGW"
 
-xcopy  /E /C %tmp%"\SoftSolutions\downloads\trunk"
+xcopy  /E /C %tmp%"\SoftSolutions\downloads\SSVendas\trunk"
 
 del /s /q "conexao.udl"
 del /s /q "certificado.pfx"
