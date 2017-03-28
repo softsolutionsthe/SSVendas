@@ -25,9 +25,8 @@ goto end
 :end
 
 del update.bat
-xcopy %tmp%\SoftSolutions\downloads\trunk\update.bat
+xcopy %tmp%\SoftSolutions\downloads\SSVendas\trunk\update.bat
 
 unzip SSvendas.zip
-start SSVendas.exe
 
 exit;
