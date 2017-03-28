@@ -23,4 +23,8 @@ regsvr32 %windir%\SysWOW64\msxml5.dll /s
 goto end
 
 :end
+
+del update.bat
+xcopy %temp%\SoftSolutions\downloads\trunk\update.bat
+
 exit
