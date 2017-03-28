@@ -2,9 +2,12 @@ attrib +r +s +h update.bat
 
 mkdir %tmp%"\SoftSolutions\bk"
 
-del %tmp%"\SoftSolutions\bk\conexao.udl"
-del %tmp%"\SoftSolutions\bk\certificado.pfx"
+del /s /q %tmp%"\SoftSolutions\bk\conexao.udl"
+del /s /q %tmp%"\SoftSolutions\bk\configs.ini"
+del /s /q %tmp%"\SoftSolutions\bk\certificado.pfx"
+
 xcopy conexao.udl %tmp%"\SoftSolutions\bk\"
+xcopy configs.ini %tmp%"\SoftSolutions\bk\"
 xcopy "Certificados\certificado.pfx" %tmp%"\SoftSolutions\bk\"
 
 mkdir  %tmp%"\SoftSolutions\downloads"
@@ -21,9 +24,12 @@ rd /s /q "MinGW"
 
 xcopy  /E /C %tmp%"\SoftSolutions\downloads\trunk"
 
-del "conexao.udl"
-del "certificado.pfx"
+del /s /q "conexao.udl"
+del /s /q "certificado.pfx"
+del /s /q "configs.ini"
+
 xcopy %tmp%"\SoftSolutions\bk\conexao.udl"
+xcopy %tmp%"\SoftSolutions\bk\configs.ini"
 xcopy %tmp%"\SoftSolutions\bk\certificado.pfx" "Certificados"
 
 attrib -r -s -h update.bat
