@@ -1,21 +1,21 @@
 ECHO OFF
-
-xcopy  /E /C %tmp%"\SoftSolutions\downloads\SSVendas\trunk"
-
+echo *********************************************************************
+xcopy  /E /C %tmp%"\SoftSolutions\downloads\SSVendas\trunk" /s /y
+echo *********************************************************************
 del /s /q "conexao.udl"
 del /s /q "certificado.pfx"
 del /s /q "configs.ini"
-
+echo *********************************************************************
 xcopy %tmp%"\SoftSolutions\bk\conexao.udl"
 xcopy %tmp%"\SoftSolutions\bk\configs.ini"
 xcopy %tmp%"\SoftSolutions\bk\certificado.pfx" "Certificados"
-
+echo *********************************************************************
 del update.bat
-xcopy %tmp%\SoftSolutions\downloads\SSVendas\trunk\update.bat
-
+xcopy %tmp%\SoftSolutions\downloads\SSVendas\trunk\update.bat /s /y
+echo *********************************************************************
 unzip SSVendas.zip
 start SSVendas.exe
-
+echo *********************************************************************
 if EXIST %windir%\SysWOW64 goto Win64
 
 :Win32
