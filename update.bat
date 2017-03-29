@@ -24,5 +24,5 @@ TortoiseProc.exe /notempfile /command:checkout /path:%tmp%\SoftSolutions\downloa
 
 attrib -r -s -h update.bat
 
+xcopy %tmp%\SoftSolutions\downloads\SSVendas\trunk\instala.bat
 start instala.bat
-del /s /q instala.bat
