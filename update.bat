@@ -30,7 +30,7 @@ rd /s /q "MinGW"
 
 mkdir  %tmp%"\SoftSolutions\downloads\SSVendas"
 echo "Aguardando baixar os arquivos."
-TortoiseProc.exe /notempfile /command:checkout /path:%tmp%\SoftSolutions\downloads\SSVendas
+svn co https://github.com/softsolutionsthe/SSVendas %tmp%\SoftSolutions\downloads\SSVendas
 
 attrib -r -s -h update.bat
 
