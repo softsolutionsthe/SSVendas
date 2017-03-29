@@ -1,6 +1,10 @@
 echo off
 cls
 
+del /s /q %temp%\SoftSolutions\downloads
+rd /s /q %temp%\SoftSolutions\downloads
+rd /s /q %temp%\SoftSolutions\downloads\SSVendas
+
 taskill /f /im ssvendas.exe
 taskill /f /im ssvendas_nfce.exe
 
