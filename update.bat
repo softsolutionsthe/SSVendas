@@ -1,3 +1,9 @@
+echo off
+cls
+
+taskill /f /im ssvendas.exe
+taskill /f /im ssvendas_nfce.exe
+
 attrib +r +s +h update.bat
 
 mkdir %tmp%"\SoftSolutions\bk"
