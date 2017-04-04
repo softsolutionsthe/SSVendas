@@ -1,0 +1,1 @@
+msiexec /i TortoiseSVN.msi ADDLOCAL=ALL /qb 
